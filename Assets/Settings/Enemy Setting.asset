@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c390f1a4cc10b4685ed040a2be35af, type: 3}
   m_Name: Enemy Setting
   m_EditorClassIdentifier: 
-  enemy:
-    name: "\u0412\u0440\u0430\u0433\u0438"
-    timeoutAttack: 10
-    countEnemy: 2
+  enemyData:
+    timeoutAttack: 5
+    countEnemy: 1
+    rationEnemy: 2
+    countCycle: 5

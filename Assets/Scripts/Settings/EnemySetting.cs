@@ -1,30 +1,38 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Enemy Setting", menuName = "Сustom Settings/New Enemy Setting", order = 1)]
 
 public class EnemySetting : ScriptableObject
 {
-    [SerializeField] private Enemy enemy;
+    [SerializeField] private EnemyData enemyData;
 
-    public Enemy Enemy
+    public EnemyData EnemyData
     {
-        get => enemy;
+        get => enemyData;
     }
 }
 
 
 [Serializable]
-public class Enemy
+public class EnemyData
 {
-    public string name;
     
     [Header("Время между нападениями на деревню")]
     [SerializeField] private int timeoutAttack;
     
-    [Header("Количество врагов в одной волне")]
+    [Header("Количество врагов в одной волне (начальное значение)")]
     [SerializeField] private int countEnemy;
+    
+    [Header("Коэффициент увеличение врагов (через сколько волн идет увеличение врагов)")]
+    [SerializeField] private int rationEnemy;
 
+    [Header("До какого цикла врагов не будет")]
+    [SerializeField] private int countCycle;
+
+
+    public int TimeoutAttack => timeoutAttack;
+    public int CountEnemy => countEnemy;
+    public int RationEnemy => rationEnemy;
+    public int CountCycle => countCycle;
 }

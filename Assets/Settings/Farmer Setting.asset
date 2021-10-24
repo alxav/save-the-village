@@ -17,4 +17,4 @@ MonoBehaviour:
     extractCountWheat: 2
     timeoutExtract: 3
     priceInWheat: 1
-    timeTraining: 2
+    timeTraining: 1

@@ -1,15 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Farmer Setting", menuName = "Сustom Settings/New Farmer Setting", order = 1)]
 
 public class FarmerSetting : ScriptableObject
 {
-    [SerializeField] private Farmer farmer;
+    [SerializeField] private FarmerData farmer;
 
-    public Farmer Farmer
+    public FarmerData Farmer
     {
         get => farmer;
     }
@@ -17,9 +15,8 @@ public class FarmerSetting : ScriptableObject
 
 
 [Serializable]
-public class Farmer
+public class FarmerData
 {
-    public string name;
 
     [Header("Количество пшеницы, которое добывает 1 крестьянин за цикл:")]
     [SerializeField] private int extractCountWheat;
@@ -32,7 +29,10 @@ public class Farmer
     
     [Header("Время найма одного крестьянина (сек.):")]
     [SerializeField] private int timeTraining;
-    
-    
 
+    public int ExtractCountWheat => extractCountWheat;
+    public int TimeoutExtract => timeoutExtract;
+    public int PriceInWheat => priceInWheat;
+    public int TimeTraining => timeTraining;
+    
 }

@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class WarriorSetting : ScriptableObject
 {
-    [SerializeField] private Warrior warrior;
+    [SerializeField] private WarriorData warrior;
 
-    public Warrior Warrior
+    public WarriorData Warrior
     {
         get => warrior;
     }
@@ -17,7 +17,7 @@ public class WarriorSetting : ScriptableObject
 
 
 [Serializable]
-public class Warrior
+public class WarriorData
 {
     public string name;
 
@@ -32,7 +32,10 @@ public class Warrior
     
     [Header("Время найма одного воина (сек.):")]
     [SerializeField] private int timeTraining;
-    
-    
+
+    public int EatCountWheat => eatCountWheat;
+    public int TimeoutEat => timeoutEat;
+    public int PriceInWheat => priceInWheat;
+    public int TimeTraining => timeTraining;
 
 }

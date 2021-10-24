@@ -15,6 +15,6 @@ MonoBehaviour:
   warrior:
     name: "\u0412\u043E\u0438\u043D"
     eatCountWheat: 2
-    timeoutEat: 10
-    priceInWheat: 2
+    timeoutEat: 4
+    priceInWheat: 3
     timeTraining: 2
