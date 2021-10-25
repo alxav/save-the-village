@@ -20,10 +20,7 @@ public class EnemyData
     
     [Header("Время между нападениями на деревню")]
     [SerializeField] private int timeoutAttack;
-    
-    [Header("Количество врагов в одной волне (начальное значение)")]
-    [SerializeField] private int countEnemy;
-    
+
     [Header("Коэффициент увеличение врагов (через сколько волн идет увеличение врагов)")]
     [SerializeField] private int rationEnemy;
 
@@ -32,7 +29,6 @@ public class EnemyData
 
 
     public int TimeoutAttack => timeoutAttack;
-    public int CountEnemy => countEnemy;
     public int RationEnemy => rationEnemy;
     public int CountCycle => countCycle;
 }

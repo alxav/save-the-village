@@ -34,6 +34,9 @@ public class Game : MonoBehaviour
                 uiManager.OpenWinPanel();
                 helpers.SetTimeScale(0);
                 break;
+            case EnumStateGame.Pause:
+                helpers.SetTimeScale(0);
+                break;
 
         }
         

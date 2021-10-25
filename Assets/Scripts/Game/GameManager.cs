@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         SetSate(EnumStateGame.Defeat);
     }
+    
+    public void PauseGame()
+    {
+        SetSate(EnumStateGame.Pause);
+    }
 
     private void SetSate(EnumStateGame state)
     {

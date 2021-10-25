@@ -16,4 +16,4 @@ MonoBehaviour:
     timeoutAttack: 5
     countEnemy: 1
     rationEnemy: 2
-    countCycle: 1
+    countCycle: 3

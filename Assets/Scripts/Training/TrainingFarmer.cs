@@ -24,6 +24,20 @@ public class TrainingFarmer : MonoBehaviour
         AddClickButton();
         Farmer.ProgressTraining += SetReload;
         Wheat.Count += UpdateCountWheat;
+        GameManager.State += PauseGame;
+    }
+
+    private void PauseGame(EnumStateGame state)
+    {
+        switch (state)
+        {
+            case EnumStateGame.Game:
+                SetInteractableButton(true);
+                break;
+            case EnumStateGame.Pause:
+                SetInteractableButton(false);
+                break;
+        }
     }
 
     private void UpdateCountWheat(int value)

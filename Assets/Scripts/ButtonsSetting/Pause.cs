@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,16 +11,14 @@ public class Pause : MonoBehaviour
 
     private Image image;
     private bool isPlay;
-    private Helpers helpers;
 
     private void Start()
     {
         isPlay = true;
         image = GetComponent<Image>();
         UpdateSprite(spritePause);
-        helpers = new Helpers();
     }
-
+    
     private void UpdateSprite(Sprite sprite)
     {
         image.sprite = sprite;
@@ -30,15 +27,15 @@ public class Pause : MonoBehaviour
     public void UpdateStateGame()
     {
         isPlay = !isPlay;
-        
+
         if (isPlay)
         {
-            helpers.SetTimeScale(1);
+            GameManager.Instance.StartGame();
             UpdateSprite(spritePause);
             return;
         }
-        
-        helpers.SetTimeScale(0);
+
+        GameManager.Instance.PauseGame();
         UpdateSprite(spritePlay);
     }
 

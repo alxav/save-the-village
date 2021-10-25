@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 8669822215988485955}
   - component: {fileID: 8669822215988485956}
   - component: {fileID: 8669822215988485957}
+  - component: {fileID: 3967792789542147178}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -330,4 +331,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8669822215988485956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3967792789542147178}
+        m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
+        m_MethodName: SetIsPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3967792789542147178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669822215988485959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd51cf10ccccb5142aa509889eebe957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playSprite: {fileID: 21300000, guid: 077bee4ed32375648a9fb27d241a1ce9, type: 3}
+  pauseSprite: {fileID: 21300000, guid: b5d957f0d7b7d3a48a7cd5a8df7ee42b, type: 3}
+  audio: {fileID: 0}
+  audioClick: {fileID: 0}
