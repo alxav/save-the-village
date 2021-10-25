@@ -27,6 +27,8 @@ public class Game : MonoBehaviour
                 helpers.SetTimeScale(1);
                 break;
             case EnumStateGame.Defeat:
+                uiManager.OpenDefeatPanel();
+                helpers.SetTimeScale(0);
                 break;
             case EnumStateGame.Win:
                 uiManager.OpenWinPanel();

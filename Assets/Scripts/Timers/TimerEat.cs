@@ -39,7 +39,7 @@ public class TimerEat : MonoBehaviour
         }
 
         time = 0;
-        Wheat.Instance.SetCount(-warriorData.EatCountWheat * Warrior.Instance.GetCont());
+        Wheat.Instance.SetCount(-warriorData.EatCountWheat * Warrior.Instance.GetCount());
 
     }
 

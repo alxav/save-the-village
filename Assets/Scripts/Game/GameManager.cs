@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     {
         SetSate(EnumStateGame.Win);
     }
+    
+    public void DefeatGame()
+    {
+        SetSate(EnumStateGame.Defeat);
+    }
 
     private void SetSate(EnumStateGame state)
     {

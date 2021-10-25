@@ -4,6 +4,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject defeatPanel;
 
     public void OpenStartPanel()
     {
@@ -18,6 +19,11 @@ public class UIManager : MonoBehaviour
     public void OpenWinPanel()
     {
         SetVisiblePanel(winPanel, true);
+    }
+    
+    public void OpenDefeatPanel()
+    {
+        SetVisiblePanel(defeatPanel, true);
     }
 
     private void SetVisiblePanel(GameObject panel, bool flag)

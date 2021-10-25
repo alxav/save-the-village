@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ public class Wheat : MonoBehaviour
     public static event Action<int> Count;
 
     private int count;
+    private int allCount;
 
     private void Awake()
     {
@@ -19,21 +19,26 @@ public class Wheat : MonoBehaviour
     {
         SetCount(startCount);
     }
-
-
-    public int GetCont() => count;
+    
+    private void OnDestroy()
+    {
+        Count = null;
+    }
+    
+    public int GetCont() => count; 
+    
+    // Отнимаем стартовое значение, мы его не производили
+    public int GetAllCont() => allCount - startCount;
 
     public void SetCount(int value)
     {
         count += value;
 
+        if (value > 0)
+            allCount += value;
+        
         if (count < 0) count = 0;
         
         Count?.Invoke(count);
-    }
-
-    private void OnDestroy()
-    {
-        Count = null;
     }
 }

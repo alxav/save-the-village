@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     private float time;
     private Helpers helpers;
     private Coroutine CoroutineTimeoutCycle;
+    private Warrior warrior;
     
     void Awake()
     {
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         helpers = new Helpers();
         countCycle = 0;
+        warrior = Warrior.Instance;
         SetCount();
     }
 
@@ -61,13 +63,19 @@ public class Enemy : MonoBehaviour
     }
 
     public EnemyData GetEnemyData() => enemyData;
+    public int GetCountCycle() => countCycle;
     
     private void Attack()
     {
         time = enemyData.TimeoutAttack;
         var killWarrior = helpers.CountEnemyForCycle(countCycle, EnumCycle.Current, enemyData.CountCycle,
             enemyData.RationEnemy);
-        Warrior.Instance.SetCount(-killWarrior);
+        warrior.SetCount(-killWarrior);
+        
+        // Защита, чтобы не увеличилось количество волн. Нужно было бы подвязаться к EnumStateGame, было бы красивее и вернее.
+        if (warrior.GetCount() < 0)
+            return;
+        
         SetCount();
     }
 

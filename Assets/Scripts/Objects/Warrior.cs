@@ -14,6 +14,7 @@ public class Warrior : MonoBehaviour
     
     private WarriorData warriorData;
     private int count;
+    private int countTraining;
     private float time;
 
     private void Awake()
@@ -53,13 +54,24 @@ public class Warrior : MonoBehaviour
         ProgressTraining = null;
     }
     
-    public int GetCont() => count;
+    public int GetCount() => count;
+    
+    
+    // Отнимаем стартовое значение, мы его не тренировали
+    public int GetCountTraining() => countTraining - startCount;
 
     public WarriorData GetWarriorData() => warriorData; 
 
     public void SetCount(int value)
     {
         count += value;
+
+        if (value > 0)
+            countTraining += value;
+        
+        if (count < 0)
+            GameManager.Instance.DefeatGame();
+        
         Count?.Invoke(count);
     }
 

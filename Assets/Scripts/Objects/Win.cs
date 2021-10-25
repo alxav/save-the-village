@@ -12,12 +12,12 @@ public class Win : MonoBehaviour
 
     private void Awake()
     {
+        winData = winSetting.WinData;
         Instance = this;
     }
 
     void Start()
     {
-        winData = winSetting.WinData;
         Farmer.Count += GetCountFarmer;
         Wheat.Count += GetCountWheat;
     }
